@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/createAdmin.css">
+</head>
+
+<body>
+    <div class="formbold-main-wrapper">
+        <div class="formbold-form-wrapper">
+            <h1 style="text-align: center; " class="custom-h1">FORM UPDATE ADMIN</h1>
+            <form action="/update-admin" method="POST">
+                <div class="formbold-mb-5" hidden>
+                    <label for="adminId" class="formbold-form-label"> ID </label>
+                    <input type="text" name="adminId" id="adminId" placeholder="Enter ID" class="formbold-form-input"
+                        value="<%= adminEdit.id %>" />
+                </div>
+                <div class="formbold-mb-5">
+                    <label for="username" class="formbold-form-label"> User Name </label>
+                    <input type="text" name="username" id="username" placeholder="Enter username"
+                        class="formbold-form-input" value="<%= adminEdit.username %>" />
+                </div>
+                <div class="formbold-mb-5">
+                    <label for="password" class="formbold-form-label"> Password </label>
+                    <input type="text" name="password" id="password" placeholder="Enter your password"
+                        class="formbold-form-input" value="<%= adminEdit.password %>" />
+                </div>
+                <div class="formbold-mb-5">
+                    <label for="role" class="formbold-form-label"> Role </label>
+                    <select name="role" id="role" class="formbold-form-input">
+                        <option value="admin">Admin</option>
+                        <option value="student">Student</option>
+                        <option value="teacher">Teacher</option>
+                    </select>
+                </div>
+                <div>
+                    <button class="formbold-btn">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

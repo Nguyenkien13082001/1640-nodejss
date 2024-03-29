@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update Event Form</title>
+    <link rel="stylesheet" href="/static/css/eventUpdate.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h2>Update Event</h2>
+      <form action="/event/update-event" method="POST">
+        <div class="form-group" hidden>
+          <label for="eventId" class="formbold-form-label"> ID </label>
+          <input
+            type="hidden"
+            id="eventId"
+            name="eventId"
+            value="<%= eventEdit.id %>"
+          />
+        </div>
+        <div class="form-group">
+          <label for="event_name">Event Name:</label><br />
+          <input
+            type="text"
+            id="event_name"
+            name="event_name"
+            value="<%= eventEdit.event_name %>"
+            required
+          /><br /><br />
+        </div>
+        <div class="form-group">
+          <label for="first_closure_date">First Closure Date:</label><br />
+          <input
+            type="date"
+            id="first_closure_date"
+            name="first_closure_date"
+            value="<%= eventEdit.first_closure_date.toISOString().slice(0,10) %>"
+            required
+          /><br /><br />
+        </div>
+        <div class="form-group">
+          <label for="final_closure_date">Final Closure Date:</label><br />
+          <input
+            type="date"
+            id="final_closure_date"
+            name="final_closure_date"
+            value="<%= eventEdit.final_closure_date.toISOString().slice(0,10) %>"
+            required
+          /><br /><br />
+        </div>
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+  </body>
+</html>

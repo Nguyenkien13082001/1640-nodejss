@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+
+
+<body>
+<div class="container">
+    <!-- Thêm thanh tìm kiếm -->
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search...">
+        <button onclick="searchFunction()">Search</button>
+    </div>
+
+    <aside>
+        <p>Menu</p>
+        <a href="/admin"> <i class="fa fa-user-o" aria-hidden="true"></i> Home </a>
+        <a href="/admin_panel">
+          <i class="fa fa-laptop" aria-hidden="true"></i> Account Management
+        </a>
+        <a href="/event">
+          <i class="fa fa-clone" aria-hidden="true"></i> Event Management
+        </a>
+        <a href="/faculty">
+          <i class="fa fa-star-o" aria-hidden="true"></i> Faculty Management
+        </a>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+      </aside>
+      
+
+    <div class="container">
+        <div class="row">
+            <a class="btn" href="/create">Add new admin</a>
+            <a class="btn green" href="/admin/sort/asc">Name ascending</a>
+            <a class="btn lime" href="/admin/sort/desc">Name descending</a>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>Role</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% listAdmins.forEach(function(admin) { %>
+                    <tr>
+                        <td>
+                            <%= admin.id%>
+                        </td>
+                        <td>
+                            <%= admin.username%>
+                        </td>
+                        <td>
+                            <%= admin.password%>
+                        </td>
+                        <td>
+                            <%= admin.role%>
+                        </td>
+                        <td style="text-align: center;">
+                            <a href="/update/<%= admin.id %>" class="edit-btn">Edit</a>
+                            <form action="/delete-admin/<%= admin.id%>" method="POST" class="delete-form">
+                                <button class="delete-btn">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    <% }); %>
+            </tbody>
+        </table>
+        <script>
+            function searchFunction() {
+                var input, filter, table, tr, td, i, txtValue;
+                input = document.getElementById("searchInput");
+                filter = input.value.toUpperCase();
+                table = document.querySelector("table");
+                tr = table.getElementsByTagName("tr");
+    
+                for (i = 0; i < tr.length; i++) {
+                    td = tr[i].getElementsByTagName("td")[1]; // Chỉ tìm kiếm theo cột Username
+                    if (td) {
+                        txtValue = td.textContent || td.innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            tr[i].style.display = "";
+                        } else {
+                            tr[i].style.display = "none";
+                        }
+                    }
+                }
+            }
+            function logout() {
+            // Thực hiện các thao tác cần thiết khi đăng xuất
+            // Ví dụ: xoá token, clear session, hoặc các biến lưu trạng thái đăng nhập
+            // Redirect người dùng về trang đăng nhập
+            window.location.href = "/login"; // Đổi "/login" thành đường dẫn tới trang đăng nhập của bạn
+        }
+        </script>
+</body>
+
+</html>

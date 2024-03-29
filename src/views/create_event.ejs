@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Event Form</title>
+    <link rel="stylesheet" href="/static/css/event.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h2>ADD EVENT</h2>
+      <form action="/event/create-event" method="POST">
+        <label for="event_name">Event Name:</label><br />
+        <input
+          type="text"
+          id="event_name"
+          name="event_name"
+          required
+        /><br /><br />
+
+        <label for="first_closure_date">First Closure Date:</label><br />
+        <input
+          type="date"
+          id="first_closure_date"
+          name="first_closure_date"
+          required
+        /><br /><br />
+
+        <label for="final_closure_date">Final Closure Date:</label><br />
+        <input
+          type="date"
+          id="final_closure_date"
+          name="final_closure_date"
+          required
+        /><br /><br />
+
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+  </body>
+</html>

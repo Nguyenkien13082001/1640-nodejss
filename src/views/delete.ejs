@@ -1,0 +1,33 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete a admin</title>
+    <link rel="stylesheet" href="/static/css/deleteFaculty.css" />
+  </head>
+
+  <body>
+    <div class="form-add-new">
+      <form action="/delete-admin" method="POST">
+        <fieldset>
+          <legend>Delete A Admin</legend>
+          <div class="input-group d-none" hidden>
+            <label>Id: </label>
+            <input type="text" name="id" value="<%= adminEdit.id %>" />
+          </div>
+          <div class="input-group">
+            <label>Are you sure to delete this user with Username: </label>
+            <input
+              type="text"
+              name="username"
+              value="<%= adminEdit.username %>"
+            />
+          </div>
+          <div>
+            <button>Confirm</button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </body>
+</html>

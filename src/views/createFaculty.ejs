@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/createAdmin.css">
+</head>
+
+<body>
+    <div class="formbold-main-wrapper">
+        <div class="formbold-form-wrapper">
+            <h1 style="text-align: center; " class="custom-h1">FORM ADD NEW FACULTY</h1>
+            <form action="/faculty/create-faculty" method="POST">
+
+                <div class="formbold-mb-5">
+                    <label for="faculty_name" class="formbold-form-label"> Faculty Name </label>
+                    <input type="text" name="faculty_name" id="faculty_name" placeholder="Enter username"
+                        class="formbold-form-input" />
+                </div>
+                <div>
+                    <button class="formbold-btn">Add New Faculty</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

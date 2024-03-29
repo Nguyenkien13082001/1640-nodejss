@@ -1,0 +1,33 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete a faculty</title>
+    <link rel="stylesheet" href="/static/css/deleteFaculty.css" />
+  </head>
+
+  <body>
+    <div class="form-add-new">
+      <form action="/faculty/delete-faculty" method="POST">
+        <fieldset>
+          <legend>Delete A Faculty</legend>
+          <div class="input-group d-none" hidden>
+            <label>Id: </label>
+            <input type="text" name="id" value="<%= facultyEdit.id %>" />
+          </div>
+          <div class="input-group">
+            <label>Are you sure to delete this user with Faculty Name: </label>
+            <input
+              type="text"
+              name="faculty_name"
+              value="<%= facultyEdit.faculty_name %>"
+            />
+          </div>
+          <div>
+            <button>Confirm</button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </body>
+</html>
