@@ -19,7 +19,7 @@ var dbState = [{
 
 const connection = async () => {
     try {
-        await mongoose.connect('mongodb://localhost:27017/comp1640');
+        await mongoose.connect('mongodb+srv://manhdc01:12345@cluster0.z2zlgel.mongodb.net/comp1640');
         const state = Number(mongoose.connection.readyState);
         console.log(dbState.find(f => f.value === state).label, "to db"); // connected to db
     } catch (error) {
