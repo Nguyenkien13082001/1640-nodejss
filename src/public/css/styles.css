@@ -60,6 +60,7 @@ body {
   max-width: 1200px;
   margin: 20px auto;
   padding: 0 20px;
+  margin-right: 90px;
 }
 
 table {
@@ -189,6 +190,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 90px;
 }
 
 .search-bar input[type="text"] {
